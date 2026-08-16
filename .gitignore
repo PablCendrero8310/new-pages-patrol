@@ -1,0 +1,32 @@
+# Credenciales / configuración privada
+user-config.py
+
+# Caché de Pywikibot
+apicache/
+
+# Logs
+logs/
+
+# Archivos de estado/control locales
+throttle.ctrl
+
+# Archivos generados por Pywikibot
+*.lwp
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Entorno virtual
+.venv/
+venv/
+env/
+
+# Variables de entorno
+.env
+.env.*
+
+# IDE
+.vscode/
+.idea/
