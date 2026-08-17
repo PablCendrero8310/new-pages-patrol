@@ -1,4 +1,4 @@
-# Copyright (C) 2026 Pablo Cendrero Fernández
+# Copyright (C) 2026 Pablo Cendrero
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -57,7 +57,7 @@ logging.info("Model loaded.")
 # Pywikibot
 # --------------------------------------------------
 
-site = pywikibot.Site("es", "wikipedia")
+site = pywikibot.Site("test", "wikipedia")
 
 # Cambios ya procesados
 processed_changes = set()

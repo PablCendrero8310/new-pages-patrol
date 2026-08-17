@@ -15,6 +15,7 @@ dependencies = [
     "optimum[onnxruntime]==2.1.0",
     "pywikibot>=11.6.0",
     "requests>=2.20.1",
+    "requests-oauthlib>=2.0.0",
     "transformers>=4.56,<4.57",
 ]
 
