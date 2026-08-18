@@ -28,7 +28,7 @@ from transformers import AutoTokenizer
 
 MODEL_NAME = "gravitee-io/detoxify-onnx"
 
-CONTENT_TOXICITY_THRESHOLD = 0.80
+CONTENT_TOXICITY_THRESHOLD = 0.85
 TITLE_TOXICITY_THRESHOLD = 0.90
 
 MAX_PROCESSED_CHANGES = 1000
@@ -57,7 +57,7 @@ logging.info("Model loaded.")
 # Pywikibot
 # --------------------------------------------------
 
-site = pywikibot.Site("test", "wikipedia")
+site = pywikibot.Site("es", "wikipedia")
 
 # Cambios ya procesados
 processed_changes = set()
