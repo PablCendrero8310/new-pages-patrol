@@ -331,11 +331,13 @@ async def process_change(change):
 def notify_user(user: pywikibot.User, title: str):
     talk_page = user.getUserTalkPage()
 
-    talk_page.text += f"{{subst:Aviso destruir|1={title}|2=g2}} ~~~~"
+    message = f"{{subst:Aviso destruir|1={title}|2=g2}} ~~~~"
 
     talk_page.save(
         summary="Bot: aviso sobre página creada",
+        watch=None,
         minor=False,
+        appendtext=message,
     )
 
 
