@@ -331,7 +331,7 @@ async def process_change(change):
 def notify_user(user: pywikibot.User, title: str):
     talk_page = user.getUserTalkPage()
 
-    message = f"{{subst:Aviso destruir|1={title}|2=g2}} ~~~~"
+    message = f"{{{{subst:Aviso destruir|1={title}|2=g2}}}} ~~~~"
 
     talk_page.save(
         summary="Bot: aviso sobre página creada",
@@ -346,9 +346,9 @@ def notify_user(user: pywikibot.User, title: str):
 # --------------------------------------------------
 
 
-def edit_page(title: str):
+def edit_page(title: str, user: pywikibot.User):
     page = pywikibot.Page(site, title)
-
+    username = user.username
     try:
         text = page.text
 
@@ -359,7 +359,7 @@ def edit_page(title: str):
             )
             return False
 
-        new_text = "{{destruir|bot=PCendrerBOT|g2}}\n" + text
+        new_text = f"{{{{RobotDestruir|{username}|g2}}}}" + text
 
         page.text = new_text
 
@@ -411,7 +411,7 @@ async def check_recent_changes():
             changes = await asyncio.to_thread(
                 lambda: list(
                     site.recentchanges(
-                        namespaces=[0, 1, 2, 3],
+                        namespaces=[0, 1, 2],
                         changetype="new",
                         total=20,
                     )
